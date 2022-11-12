@@ -1,0 +1,25 @@
+{
+  "name": "piacere-domlr",
+  "displayName": "PIACERE DOMLR",
+  "description": "Syntax Highlighting for PIACERE DOMLR files.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "domlr",
+      "aliases": ["DOMLR", "domlr"],
+      "extensions": [".domlr"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "domlr",
+      "scopeName": "source.domlr",
+      "path": "./syntaxes/domlr.tmLanguage.json"
+    }]
+  }
+}

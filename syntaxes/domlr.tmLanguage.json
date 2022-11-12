@@ -1,0 +1,78 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "DOMLR",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(is|not|and|or|implies|iff|has|exists|forall|class)\\b",
+					"name": "keyword.operator"
+				},
+				{
+					"match": "(!True|!False)",
+					"name": "constant.language"
+				},
+				{
+					"match": "\\b([a-zA-Z]*)\\.([a-zA-Z]*)\\b",
+					"captures": {
+						"1" : { "name": "entity.name" },
+						"2" : { "name": "entity.name.class" }
+					}
+				},
+				{
+					"match": "\\b([a-zA-Z]*)\\.([a-zA-Z]*)\\.([a-zA-Z]*)\\b",
+					"captures": {
+						"1" : { "name": "entity.name" },
+						"2" : { "name": "entity.name.class" },
+						"3" : { "name": "entity.other.attribute-name" }
+					}
+				},
+				{
+					"match": "\\b([a-z][a-zA-Z0-9_]*)\\b",
+					"name": "variable.parameter"
+				},
+				{
+					"match": "\\b([A-Z][a-zA-Z0-9_]*)\\b",
+					"name": "constant.other"
+				},
+				{
+					"match": "\\b(\\d+)\\b",
+					"name": "constant.numeric"
+				},
+				{
+					"begin": "#",
+					"end": "\n",
+					"name": "comment.line.number-sign"
+				},
+				{
+					"begin": "[+-](\\s)*\"",
+					"end": "\"",
+					"name": "markup.heading"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.domlr",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.domlr",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.domlr"
+}
