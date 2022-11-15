@@ -4,6 +4,7 @@
   "description": "Syntax Highlighting for PIACERE DOMLR files.",
   "version": "1.0.0",
   "repository": "https://github.com/andreafra/piacere-domlr",
+  "publisher": "andreafra",
   "engines": {
     "vscode": "^1.54.0"
   },
